@@ -1,50 +1,32 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import logo from "./logo.svg";
+
+import useFetch from "./hooks/fetchData";
 import "./App.css";
 import "./scss/styles.scss";
 
-function App() {
-  const [count, setCount] = useState(0);
+const App = () => {
+  const { response, error, isLoading } = useFetch({
+    url: "https://getgreenspark.mocklab.io/products",
+  });
+
+  console.log(response, "response");
+  console.log(error, "error");
+  console.log(isLoading, "isLoading");
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.tsx</code> and save to test HMR updates.
-        </p>
-        <div className="redbackground">Red Background</div>
-        <div className="bluebackground">
-          Blue Background<span>Span</span>
-        </div>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {" | "}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
+      {isLoading || response === null ? (
+        <>Loading</>
+      ) : (
+        <>
+          <div className="">{JSON.stringify(response[0])}</div>
+          <div className="">{JSON.stringify(response[1])}</div>
+          <div className="">{JSON.stringify(response[2])}</div>
+        </>
+      )}
     </div>
   );
-}
+};
 
 export default App;
