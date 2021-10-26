@@ -12,14 +12,21 @@ interface IReq {
   body?: any;
 }
 
+export enum IStatus {
+  Idle,
+  Loading,
+  Succeeded,
+  Failed,
+}
+
 const useFetch = (opts: IReq) => {
   const [response, setResponse] = useState<Array<IProduct> | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [isLoading, setIsLoading] = useState<Boolean>(true);
+  const [status, setStatus] = useState<IStatus>(IStatus.Idle);
 
   useEffect(() => {
     const fetchData = async () => {
-      setIsLoading(true);
+      setStatus(IStatus.Loading);
       try {
         const res = await fetch(opts.url, {
           method: opts.method,
@@ -27,15 +34,16 @@ const useFetch = (opts: IReq) => {
         });
         const json = await res.json();
         setResponse(json);
-        setIsLoading(false);
+        setStatus(IStatus.Succeeded);
       } catch (error: any) {
         setError(error);
+        setStatus(IStatus.Failed);
       }
     };
     fetchData();
   }, []);
 
-  return { response, error, isLoading };
+  return { response, error, status };
 };
 
 export default useFetch;
