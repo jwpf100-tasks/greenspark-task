@@ -1,1 +1,9 @@
+@use "normalise";
 @use "custom";
+@use "main";
+
+//IMPORT COMPONENTS
+
+@use "components/app";
+@use "components/container";
+@use "components/typography";
