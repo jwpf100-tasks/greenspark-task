@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 
-interface IProduct {
+export interface IProduct {
   id: Number;
-  type: Text;
+  type: string;
   amount: Number;
 }
 

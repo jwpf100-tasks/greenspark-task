@@ -1,5 +1,7 @@
+@use "../custom" as *;
+
 .app {
-  background-color:#ffffff;
+  background-color: $bgWhite;
   height: 100vh;
   display: flex;
   align-items: center;

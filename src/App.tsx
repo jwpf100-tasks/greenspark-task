@@ -4,16 +4,14 @@ import useFetch, { IStatus } from "./hooks/fetchData";
 import "./App.css";
 import "./scss/styles.scss";
 import Container from "./components/container/Container";
-import Header from "./components/container/Header";
+import ContainerHeader from "./components/container/ContainerHeader";
+import Card from "./components/card/Card";
+import Badge from "./components/card/Badge";
 
 const App = () => {
   const { response, error, status } = useFetch({
     url: "https://getgreenspark.mocklab.io/products",
   });
-
-  console.log(response, "response");
-  console.log(error, "error");
-  console.log(status, "isLoading");
 
   return (
     <div className="App app">
@@ -21,10 +19,14 @@ const App = () => {
         <>Loading</>
       ) : (
         <Container>
-          <Header text="Per product widgets" />
-          <div className="">{JSON.stringify(response[0])}</div>
-          <div className="">{JSON.stringify(response[1])}</div>
-          <div className="">{JSON.stringify(response[2])}</div>
+          <ContainerHeader text="Per product widgets" />
+          <Card>
+            <Badge
+              id={response[2].id}
+              type={response[2].type}
+              amount={response[2].amount}
+            />
+          </Card>
         </Container>
       )}
     </div>
