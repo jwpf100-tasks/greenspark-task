@@ -1,5 +1,4 @@
 import useFetch, { IStatus } from "./hooks/fetchData";
-import "./App.css";
 import "./scss/styles.scss";
 import Container from "./components/container/Container";
 import ContainerHeader from "./components/container/ContainerHeader";
@@ -10,14 +9,26 @@ const App = () => {
     url: "https://getgreenspark.mocklab.io/products",
   });
 
+  interface defaultColor {
+    [key: number]: string;
+  }
+
+  const defaultColor: defaultColor = {
+    1: "purple",
+    2: "green",
+    3: "cream",
+  };
+
   return (
-    <div className="App app">
+    <div className="app">
       {status !== IStatus.Succeeded || response === null ? (
         <>Loading</>
       ) : (
         <Container>
           <ContainerHeader text="Per product widgets" />
-          <Card response={response[0]} defaultColor={"green"}></Card>
+          {response.map((item) => (
+            <Card response={item} defaultColor={defaultColor[item.id]}></Card>
+          ))}
         </Container>
       )}
     </div>

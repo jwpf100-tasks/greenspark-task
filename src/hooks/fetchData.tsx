@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 
 export interface IProduct {
-  id: Number;
+  id: number;
   type: string;
-  amount: Number;
+  amount: number;
 }
 
 interface IReq {
