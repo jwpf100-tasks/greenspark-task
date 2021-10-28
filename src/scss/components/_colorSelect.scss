@@ -1,4 +1,5 @@
 @use "../custom" as *;
+@use "../components/mixins" as *;
 
 .colorSelectSection {
   display: flex;
@@ -14,29 +15,35 @@
 
   &--active {
     @extend .colorSelectBox;
-    height: 13px;
-    width: 13px;
+    height: 16px;
+    width: 16px;
     border: 1.5px solid $grey;
   }
 
   &--green {
     background-color: $green;
     color: $white;
+    @include hoverColorSelect;
   }
+
   &--purple {
     background-color: $purple;
     color: $white;
+    @include hoverColorSelect;
   }
   &--cream {
     background-color: $cream;
     color: $green;
+    @include hoverColorSelect;
   }
   &--white {
     background-color: $white;
     color: $green;
+    @include hoverColorSelect;
   }
   &--black {
     background-color: $black;
     color: $white;
+    @include hoverColorSelect;
   }
 }

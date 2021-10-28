@@ -1,0 +1,6 @@
+
+@mixin hoverColorSelect {
+  &:hover {
+    opacity: 0.8;
+  }
+}
