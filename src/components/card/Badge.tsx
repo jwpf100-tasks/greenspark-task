@@ -3,12 +3,18 @@ import { IProduct } from "../../hooks/fetchData";
 
 import logo from "../../assets/images/logo.svg";
 import logoName from "../../assets/images/logoName.svg";
+import { Logo, LogoName } from "../../assets/images/svg";
 
-const Badge = ({ type, amount }: IProduct) => {
+interface IBadge {
+  response: IProduct;
+  badgeColor: string;
+}
+
+const Badge = ({ response, badgeColor }: IBadge) => {
   let preText;
   let mainText;
 
-  switch (type) {
+  switch (response.type) {
     case "plastic bottles":
       preText = "collects";
       break;
@@ -23,16 +29,15 @@ const Badge = ({ type, amount }: IProduct) => {
   }
 
   return (
-    <div className="badge">
+    <div className={["badge", `badge--${badgeColor}`].join(" ")}>
       <div className="logoContainer">
-        <img className="logo" src={logo} alt="Greenspark logo" />
-        <img className="logoName" src={logoName} alt="Greenspark logo title" />
+        <Logo color={badgeColor} />
       </div>
       <div className="textContainer">
         <div className="preText">{`This product ${preText}`}</div>
-        <div className="mainText">{`${amount} ${
+        <div className="mainText">{`${response.amount} ${
           mainText ? mainText : ""
-        } ${type}`}</div>
+        } ${response.type}`}</div>
       </div>
     </div>
   );

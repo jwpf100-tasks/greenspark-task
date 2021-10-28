@@ -1,15 +1,9 @@
-import { useState, useEffect } from "react";
-
 import useFetch, { IStatus } from "./hooks/fetchData";
 import "./App.css";
 import "./scss/styles.scss";
 import Container from "./components/container/Container";
 import ContainerHeader from "./components/container/ContainerHeader";
 import Card from "./components/card/Card";
-import Badge from "./components/card/Badge";
-import OptionListItem from "./components/card/OptionListItem";
-import OptionListText from "./components/card/OptionListText";
-import Checkbox from "./components/card/Checkbox";
 
 const App = () => {
   const { response, error, status } = useFetch({
@@ -23,23 +17,7 @@ const App = () => {
       ) : (
         <Container>
           <ContainerHeader text="Per product widgets" />
-          <Card>
-            <Badge
-              id={response[2].id}
-              type={response[2].type}
-              amount={response[2].amount}
-            />
-            <OptionListItem>
-              <OptionListText text={"Link to Public Profile"} />
-              <Checkbox />
-            </OptionListItem>
-            <OptionListItem>
-              <OptionListText text={"Badge colour"} />
-            </OptionListItem>
-            <OptionListItem>
-              <OptionListText text={"Activate badge"} />
-            </OptionListItem>
-          </Card>
+          <Card response={response[0]} defaultColor={"green"}></Card>
         </Container>
       )}
     </div>
