@@ -7,6 +7,9 @@ import Container from "./components/container/Container";
 import ContainerHeader from "./components/container/ContainerHeader";
 import Card from "./components/card/Card";
 import Badge from "./components/card/Badge";
+import OptionListItem from "./components/card/OptionListItem";
+import OptionListText from "./components/card/OptionListText";
+import Checkbox from "./components/card/Checkbox";
 
 const App = () => {
   const { response, error, status } = useFetch({
@@ -26,6 +29,16 @@ const App = () => {
               type={response[2].type}
               amount={response[2].amount}
             />
+            <OptionListItem>
+              <OptionListText text={"Link to Public Profile"} />
+              <Checkbox />
+            </OptionListItem>
+            <OptionListItem>
+              <OptionListText text={"Badge colour"} />
+            </OptionListItem>
+            <OptionListItem>
+              <OptionListText text={"Activate badge"} />
+            </OptionListItem>
           </Card>
         </Container>
       )}

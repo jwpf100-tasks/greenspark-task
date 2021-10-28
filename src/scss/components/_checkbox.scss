@@ -1,0 +1,35 @@
+@use "../custom" as *;
+
+.checkboxDiv {
+  width: 20px;
+  height: 20px;
+  margin-right: 3px;
+
+  label{
+    width: 100%;
+    height: 100%;
+  }
+}
+
+input[type="checkbox"] {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+}
+
+.checkbox {
+  display: inline-block; 
+  height: 14px;
+  width: 14px;
+  background: $white;
+  border: 2px $grey solid;
+  border-radius: 2px;
+}
+
+.checkbox--active {
+  border-color:$green;
+  background: $green;
+}

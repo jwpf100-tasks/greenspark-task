@@ -1,12 +1,15 @@
 @use "../custom" as *;
-
+.card {
+  width: 221.32px;
+}
 .badge {
   height: 66px;
   width: 221.32px;
   display: flex;
   border-radius: 5.95489px;
   background-color: $purple;
-
+  margin-bottom: 10px;
+  
   .logoContainer {
     display: flex;
     flex-direction: column;
@@ -41,5 +44,22 @@
         font-weight: 700;
         
       }
+  }
+}
+.optionListItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 24px;
+  margin-bottom: 10px;
+  
+  .optionListText {
+    text-align: left;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17.01px;
+    color: $green;
+    padding-left: 1px;
+    margin: 0 0;
   }
 }
