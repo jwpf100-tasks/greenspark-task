@@ -32,6 +32,10 @@
     background-color: $black;
     color: $white;
   }
+
+  &--inactive {
+    opacity: 50%;
+  }
   
   .logoContainer {
     display: flex;
@@ -78,6 +82,7 @@
       }
     }
   }
+
   .textContainer {
     text-align: left;
     display: flex;
@@ -99,6 +104,7 @@
       }
   }
 }
+
 .optionListItem {
   display: flex;
   justify-content: space-between;

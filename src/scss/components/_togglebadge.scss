@@ -1,0 +1,83 @@
+@use "../custom" as *;
+
+// The starting state
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 46.83px;
+  height: 23.24px;
+  background-color: $bgOffWhite;
+  border: 0.683608px solid #AFC6BD;
+  box-shadow: inset 0px 1.02541px 6.83608px rgba(0, 0, 0, 0.15);
+  border-radius: 34.1804px;
+}
+
+.toggle-switch .switch {
+  position: absolute;
+  cursor: pointer;
+  border-radius: 34.1804px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: background-color 0.2s ease;
+}
+.toggle-switch .switch::before {
+  position: absolute;
+  content: "";
+  left: -1.3595px;
+  top: -1.3595px;
+  width: 23.24px;
+  height: 23.24px;
+  background: #F9F9F9;
+  border: 0.683608px solid #F2EBDB;
+  box-shadow: 0px 0px 1.36722px rgba(0, 0, 0, 0.35);
+  border-radius: 34.1804px;
+  transition: transform 0.3s ease;
+  z-index: 10;
+}
+
+.toggle-switch:hover {
+  &::after {
+    position: absolute;
+    content: "";
+    width: 37.6px;
+    height: 37.6px;
+    left: -7.860px;
+    top: -7.860px;
+    background-color: #AFC6BD;
+    opacity: 0.5;
+    // border: 0.683608px solid red;
+    box-shadow: 0px 0px 1.36722px rgba(0, 0, 0, 0.35);
+    border-radius: 34.1804px;
+    transition: transform 0.3s ease;
+    z-index: 5;
+  }
+}
+
+// The active state
+
+.toggle-switch--active {
+  border: 0px ;
+  box-shadow: none;
+}
+
+.toggle-switch .switch--active.switch {
+  background-color: $green;
+  border: 0.683608px solid #B0B0B0;
+  box-shadow: inset 0px 1.02541px 6.83608px rgba(0, 0, 0, 0.15);
+}
+
+.toggle-switch .switch--active.switch::before {
+  transform: translateX(23.24px);
+  border: 0.683608px solid #3B755F;
+  box-shadow: 0px 0px 1.36722px rgba(0, 0, 0, 0.35);
+  border-radius: 34.1804px;
+}
+
+.toggle-switch:hover.toggle-switch--active {
+  &::after {
+    transform: translateX(23.24px);
+  }
+}

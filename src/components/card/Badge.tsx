@@ -8,9 +8,10 @@ import { Logo, LogoName } from "../../assets/images/svg";
 interface IBadge {
   response: IProduct;
   badgeColor: string;
+  active: boolean;
 }
 
-const Badge = ({ response, badgeColor }: IBadge) => {
+const Badge = ({ response, badgeColor, active }: IBadge) => {
   let preText;
   let mainText;
 
@@ -29,7 +30,13 @@ const Badge = ({ response, badgeColor }: IBadge) => {
   }
 
   return (
-    <div className={["badge", `badge--${badgeColor}`].join(" ")}>
+    <div
+      className={[
+        "badge",
+        `badge--${badgeColor}`,
+        !active ? "badge--inactive" : "",
+      ].join(" ")}
+    >
       <div className="logoContainer">
         <Logo color={badgeColor} />
       </div>

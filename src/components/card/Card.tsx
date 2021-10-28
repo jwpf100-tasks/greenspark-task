@@ -5,6 +5,7 @@ import Checkbox from "./Checkbox";
 import ColorSelectSection from "./ColorSelect";
 import OptionListItem from "./OptionListItem";
 import OptionListText from "./OptionListText";
+import ToggleBadge from "./ToggleBadge";
 
 interface ICard {
   response: IProduct;
@@ -15,9 +16,10 @@ const colorArray: string[] = ["green", "purple", "cream", "white", "black"];
 
 const Card = ({ response, defaultColor }: ICard) => {
   const [badgeColor, setBadgeColor] = useState(defaultColor);
+  const [badgeActive, setBadgeActive] = useState(true);
   return (
     <div className="card">
-      <Badge response={response} badgeColor={badgeColor} />
+      <Badge response={response} badgeColor={badgeColor} active={badgeActive} />
       <OptionListItem>
         <OptionListText text={"Link to Public Profile"} />
         <Checkbox />
@@ -32,6 +34,7 @@ const Card = ({ response, defaultColor }: ICard) => {
       </OptionListItem>
       <OptionListItem>
         <OptionListText text={"Activate badge"} />
+        <ToggleBadge active={badgeActive} onClick={setBadgeActive} />
       </OptionListItem>
     </div>
   );
