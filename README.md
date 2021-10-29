@@ -20,7 +20,12 @@ The task is live at [https://josephfletcher.co.uk/greenspark/] or to run locally
 
 - The app will be running at [http://localhost:3000/greenspark/]
 
-#### My Approach
+### Screen Shots
+
+![image](https://user-images.githubusercontent.com/64267174/139489572-d6de16e4-a8d7-4846-86d4-0eee475c2629.png)
+![image](https://user-images.githubusercontent.com/64267174/139489629-a86df84e-8ee5-484e-ae47-aa678f0b1e9f.png)
+
+### Comments
 
 - For this project I've decided to use React and SCSS to replicate the design provided.  I felt that the design lent itself well to a framework like react, beacuse it was easily broken down into a number of reusale components. 
 - I used SCSS in this case because it lends itself quite well to component oriented programming and breaking the CSS down makes it easier to maintain in the future. 
