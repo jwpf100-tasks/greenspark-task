@@ -35,3 +35,4 @@ The task is live at [https://josephfletcher.co.uk/greenspark/] or to run locally
 
 - The next thing I would work on for this project would be to make the design more responsive.  It is an exact match of the design provided, but will not display correctly on some screen sizes. 
 - I think there is scope to simplify my SCSS code further as well. 
+- Testing needs to be added to the app to ensure that the toggles and checkboxes update the relevant components correctly. 
