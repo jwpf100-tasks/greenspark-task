@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 interface IOptionListText {
   text: string;
@@ -6,7 +6,7 @@ interface IOptionListText {
 }
 
 const Checkbox = () => {
-  const [isChecked, setIsChecked] = useState(false);
+  const [isChecked, setIsChecked] = useState(true);
 
   return (
     <div className="checkboxDiv">

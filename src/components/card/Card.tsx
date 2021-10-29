@@ -16,12 +16,19 @@ const colorArray: string[] = ["green", "purple", "cream", "white", "black"];
 
 const Card = ({ response, defaultColor }: ICard) => {
   const [badgeColor, setBadgeColor] = useState(defaultColor);
-  const [badgeActive, setBadgeActive] = useState(true);
+  const [badgeActive, setBadgeActive] = useState(false);
   return (
     <div className="card">
       <Badge response={response} badgeColor={badgeColor} active={badgeActive} />
       <OptionListItem>
-        <OptionListText text={"Link to Public Profile"} tooltip />
+        <OptionListText
+          text={"Link to Public Profile"}
+          tooltipText={
+            "This widget links directly to your public profile so that you can easily share your impact with your customers. Turn it off here if you do not want the badge to link to it."
+          }
+          link={"View Public Profile"}
+          tooltip
+        />
         <Checkbox />
       </OptionListItem>
       <OptionListItem>

@@ -1,7 +1,5 @@
-import React, { ReactNode } from "react";
-
 interface IHeader {
-  text?: String;
+  text: String;
 }
 
 const ContainerHeader = ({ text }: IHeader) => {

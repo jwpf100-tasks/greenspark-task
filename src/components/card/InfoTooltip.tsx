@@ -1,8 +1,8 @@
 import { Info } from "../../assets/images/svg";
 
 interface IToolTip {
-  tooltipText: string;
-  link: string;
+  tooltipText: string | undefined;
+  link: string | undefined;
 }
 
 const InfoToolTip = ({ tooltipText, link }: IToolTip) => {

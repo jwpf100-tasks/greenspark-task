@@ -7,4 +7,5 @@ export default defineConfig({
   build: {
     sourcemap: true,
   },
+  base: "https://josephfletcher.co.uk/greenspark/",
 });
