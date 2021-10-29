@@ -18,7 +18,6 @@ const Logo = ({ color }: ILogo) => {
 };
 
 const LogoImage = ({ color }: ILogoImage) => {
-  console.log(color, "color in Ilogo");
   return (
     <svg
       className={["logo", `logo--${color}`].join(" ")}
