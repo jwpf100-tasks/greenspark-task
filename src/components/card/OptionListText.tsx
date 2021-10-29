@@ -1,4 +1,4 @@
-import React from "react";
+import InfoToolTip from "./InfoTooltip";
 
 interface IOptionListText {
   text: string;
@@ -6,7 +6,19 @@ interface IOptionListText {
 }
 
 const OptionListText = ({ text, tooltip }: IOptionListText) => {
-  return <p className="optionListText">{text}</p>;
+  return !tooltip ? (
+    <p className="optionListText">{text}</p>
+  ) : (
+    <p className="optionListText">
+      {text}{" "}
+      <InfoToolTip
+        tooltipText={
+          "This widget links directly to your public profile so that you can easily share your impact with your customers. Turn it off here if you do not want the badge to link to it."
+        }
+        link={"View Public Profile"}
+      />
+    </p>
+  );
 };
 
 export default OptionListText;

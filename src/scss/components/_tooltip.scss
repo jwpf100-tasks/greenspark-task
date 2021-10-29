@@ -1,0 +1,60 @@
+@use "../custom" as *;
+
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+
+// Info Logo 
+.infoLogo {
+  width: 10px;
+  height: 10px;
+  fill: green;
+  position: relative;
+  top: -3px;
+}
+
+/* Tooltip Contents */
+.tooltiptext {
+  width: 248px;
+  height: 162px;
+  background-color: $white;
+  text-align: center;
+  padding: 24px 16px;
+  border-radius: 4px;
+
+  // Fade In Out
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 300ms ease-in, visibility 0ms ease-in 300ms;
+
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1000;
+  top: 100%;
+  left: 50%;
+  margin-left: -142px;
+
+  p {
+    margin: 0 0 12px 0;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: $lightblack;
+  }
+  a {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    color: $green;
+    text-decoration: none;
+  }
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+&:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0ms;
+}
+}

@@ -21,7 +21,7 @@ const Card = ({ response, defaultColor }: ICard) => {
     <div className="card">
       <Badge response={response} badgeColor={badgeColor} active={badgeActive} />
       <OptionListItem>
-        <OptionListText text={"Link to Public Profile"} />
+        <OptionListText text={"Link to Public Profile"} tooltip />
         <Checkbox />
       </OptionListItem>
       <OptionListItem>
